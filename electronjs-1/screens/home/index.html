@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; script-src 'self' 'unsafe-inline';">
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Novel Nest</title>
+</head>
+
+<body class="bg-yellow-300 h-screen overflow-hidden flex justify-center items-center">
+
+  <div class='flex flex-col items-center h-full w-1/2 justify-center'>
+
+    <img src='../../assets/icons/book.png' width='35%' />
+
+    <form class="w-full max-w-lg p-5 rounded">
+
+      <div class=" relative -mx-3 mb-6 px-3">
+        <label for="book-name" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+          Book Name
+          <span class="text-red-500 required-dot">
+            *
+          </span>
+        </label>
+        <input type="text" id="book-name" name="book-name"
+          class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-gray-200 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+          placeholder="Rich Dad Poor Dad" />
+      </div>
+
+
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="relative w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label for="empId" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            Book ID
+          </label>
+          <input type="text" id="empId" name="empId"
+            class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-gray-200 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+            placeholder="######" readonly />
+        </div>
+
+        <div class="relative w-full md:w-1/2 px-3">
+          <label for="book-price" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            Price
+            <span class="text-red-500 required-dot">
+              *
+            </span>
+          </label>
+          <input type="number" id="book-price" name="book-price"
+            class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-gray-200 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+            placeholder="$100" />
+        </div>
+
+      </div>
+      <div class=" relative -mx-3 mb-6 px-3">
+        <label for="book-author" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+          Author
+          <span class="text-red-500 required-dot">
+            *
+          </span>
+        </label>
+        <input type="text" id="book-author" name="book-author"
+          class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-gray-200 text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+          placeholder="Stephen Hawking" />
+      </div>
+
+
+      <button id="btnSave" type="button"
+        class="py-2 px-4  bg-pink-600 hover:bg-pink-700 focus:ring-pink-500 focus:ring-offset-pink-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
+        Add
+      </button>
+      <button id="btnGet" type="button"
+        class="py-2 px-4 mt-3 bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
+        Refresh Inventory
+      </button>
+
+    </form>
+  </div>
+
+
+  <div id="lBooks" class="grid grid-cols-1 gap-4 p-4 w-1/2 max-h-screen items-center justify-center  overflow-y-scroll mt-14 ">
+
+
+    <p class="text-lg bg-gray-400 rounded-lg p-4 text-center font-semibold text-white dark:text-neutral-200">
+      Add some books <br /> or <br /> Refresh the Inventory
+    </p>
+
+
+  </div>
+  <div class="inventory shadow-lg">
+    <p>Inventory</p>
+  </div>
+
+  <div class="bg-image">
+  </div>
+
+  <script src="./renderer.js"></script>
+
+</body>
+
+</html>

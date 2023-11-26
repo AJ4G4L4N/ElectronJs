@@ -1,0 +1,21 @@
+{
+  "name": "electronjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec electron .",
+    "build:css": "tailwindcss build styles.css -o outputtailwind.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^19.0.9"
+  },
+  "dependencies": {
+    "mongodb": "^4.13.0",
+    "tailwindcss": "^3.3.5"
+  }
+}
